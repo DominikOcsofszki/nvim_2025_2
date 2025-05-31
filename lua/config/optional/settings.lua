@@ -10,9 +10,6 @@ vim.o.swapfile = false
 vim.o.tabstop = 2
 vim.o.wrap = true
 vim.opt.inccommand = "split"
--- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
 vim.opt.mouse = "a"
 vim.opt.undofile = true
--- vim.cmd("TSEnable highlight")
--- vim.cmd.colorscheme("kanagawa")
