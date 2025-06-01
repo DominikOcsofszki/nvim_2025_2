@@ -8,6 +8,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 local foldZ = function(level) vim.o.foldlevel = tonumber(level) end
 
+vim.keymap.set("n", "<leader>z0", function() foldZ(0) end, {})
 vim.keymap.set("n", "<leader>z1", function() foldZ(1) end, {})
 vim.keymap.set("n", "<leader>z2", function() foldZ(2) end, {})
 vim.keymap.set("n", "<leader>z3", function() foldZ(3) end, {})
