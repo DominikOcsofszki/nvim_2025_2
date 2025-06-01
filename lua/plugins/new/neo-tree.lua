@@ -25,7 +25,6 @@ return {
 	opts = {
 		nesting_rules = _nesting_rules(),
 		close_if_last_window = true,
-		use_popups_for_input = false,
 		window = {
 			mappings = {
 				["P"] = {
@@ -41,9 +40,24 @@ return {
 				["z"] = "close_all_subnodes",
 				-- ["z"] = "close_all_nodes",
 				["Z"] = "expand_all_subnodes",
-			},
+				['Y'] = function(state)
+					local result = vim.fn.fnamemodify(state.tree:get_node():get_id(), ':.')
+					vim.fn.setreg('+', result)
+					vim.notify('Copied: ' .. result)
+				end,
+				['gy'] = function(state)
+					local result = vim.fn.fnamemodify(state.tree:get_node():get_id(), '')
+					vim.fn.setreg('+', result)
+					vim.notify('Copied: ' .. result)
+				end,
+				-- ['y'] = function(state)
+				-- 	local result = state.tree:get_node():name()
+				-- 	vim.fn.setreg('+', result)
+				-- 	vim.notify('Copied: ' .. result)
+				-- end
+			}
 		},
-
+		use_popups_for_input = false,
 		filesystem = {
 			filtered_items = {
 				hide_by_name = {
