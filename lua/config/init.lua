@@ -2,4 +2,3 @@ require("config.settings")
 require("config.keymaps")
 require("config.nvim_autocmd")
 require("config.optional")
-
