@@ -15,3 +15,18 @@ vim.keymap.set("n", "<leader>z3", function() foldZ(3) end, {})
 vim.keymap.set("n", "<leader>z4", function() foldZ(4) end, {})
 vim.keymap.set("n", "<leader>z5", function() foldZ(5) end, {})
 vim.keymap.set("n", "<leader>zz", function() foldZ(99) end, {})
+
+
+-- vim.api.nvim_create_autocmd("TextChangedI", {
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+-- 		local line = vim.api.nvim_get_current_line()
+-- 		local new_line = line:gsub("\u{00A0}", " ")
+-- 		if new_line ~= line then
+-- 			vim.api.nvim_set_current_line(new_line)
+-- 			vim.api.nvim_win_set_cursor(0, { row, col })
+-- 		end
+-- 	end
+-- })
+--
